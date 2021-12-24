@@ -2,7 +2,17 @@ package ro.fasttrackit.curs12.homework.ex2;
 
 import java.util.Objects;
 
-public record Person(String name, int age, String hairColour) {
+public class Person {
+
+    private final String name;
+    private final int age;
+    private final String hairColour;
+
+    public Person(String name, int age, String hairColour) {
+        this.name = name;
+        this.age = age;
+        this.hairColour = hairColour;
+    }
 
     public String getName() {
         return name;

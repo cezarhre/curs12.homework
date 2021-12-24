@@ -11,7 +11,7 @@ public class PersonMain {
                 new Person("Vali",25,"grey")
         ));
 
-        System.out.println(personList.toString());
+        System.out.println(personList);
         System.out.println(personList.mapNameToAge());
         System.out.println(personList.getOlder());
         System.out.println(personList.mapHairToName());
