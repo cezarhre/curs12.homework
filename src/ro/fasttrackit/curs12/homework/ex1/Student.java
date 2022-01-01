@@ -9,7 +9,7 @@ public class Student {
         this.students = students;
     }
 
-    public Map.Entry<String, Integer> getMaxGrade (Map<String, Integer> students) {
+    public Map.Entry<String, Integer> getMaxGrade () {
         List<Map.Entry<String, Integer>> student = new ArrayList<>(students.entrySet());
         Map.Entry<String, Integer> maxGrade = null;
         for (Map.Entry<String, Integer> stud : student) {
