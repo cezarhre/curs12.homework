@@ -5,8 +5,9 @@ import java.util.*;
 public class PersonList {
 
     private final List<Person> personList;
+    int givenAge = 18;
 
-    public PersonList(Collection<Person> personList){
+    public PersonList(List<Person> personList){
         this.personList = personList == null
                 ? new ArrayList<>()
                 : new ArrayList<>(personList);
@@ -23,19 +24,26 @@ public class PersonList {
     public List<Person> getOlder(){
         List<Person> result = new ArrayList<>();
         for(Person person : personList){
-            if(person.getAge()>18){
+            if(person.getAge()>givenAge){
                 result.add(person);
             }
         }
         return result;
     }
-    public Map<String, String> mapHairToName(){
-        Map<String, String> result = new HashMap<>();
-        for(Person person : personList){
-            result.put(person.getHairColour(), person.getName());
+
+    public Map<String, List<Person>> mapHairToName(){
+        Map<String, List<Person>> result = new LinkedHashMap<>();
+        for(Person person : personList) {
+            List<Person> colourHair = result.get(person.getHairColour());
+            if (colourHair == null) {
+                colourHair = new ArrayList<>();
+                result.put(person.getHairColour(), colourHair);
+            }
+            colourHair.add(person);
         }
         return result;
     }
+
     public Map<Integer, List<Person>> mapAgeToPerson(){
         Map<Integer, List<Person>> result = new HashMap<>();
         for(Person person : personList) {

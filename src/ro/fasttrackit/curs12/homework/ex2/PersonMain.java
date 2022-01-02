@@ -8,7 +8,7 @@ public class PersonMain {
                 new Person("George",20,"black"),
                 new Person("Ionel",35,"blond"),
                 new Person("Cristi",17,"brown"),
-                new Person("Vali",25,"grey")
+                new Person("Vali",35,"black")
         ));
 
         System.out.println(personList);
