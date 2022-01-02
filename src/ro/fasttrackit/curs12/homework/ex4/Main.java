@@ -2,9 +2,9 @@ package ro.fasttrackit.curs12.homework.ex4;
 
 import java.util.EnumMap;
 
-public class DaySchedule {
+public class Main {
     public static void main(String[] args) {
-        EnumMap<WeekDays, String> daysActivities = new EnumMap<>(WeekDays.class) {
+        EnumMap<WeekDays, String> daysSchedule = new EnumMap<>(WeekDays.class) {
             {
                 put(WeekDays.MONDAY, " Limbi Straine");
                 put(WeekDays.TUESDAY, " Sport in aer liber");
@@ -15,6 +15,7 @@ public class DaySchedule {
                 put(WeekDays.SUNDAY, " Inot");
             }
         };
-        System.out.println(daysActivities);
+
+        System.out.println(daysSchedule);
     }
 }
