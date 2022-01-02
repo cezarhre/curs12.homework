@@ -6,6 +6,8 @@ public class Employees {
 
     private final List<Employee> employees;
 
+    int salaryAmount = 6000;
+
     public Employees(List<Employee> employees) {
         this.employees = employees == null
                 ? new ArrayList<>()
@@ -15,7 +17,7 @@ public class Employees {
     public List<Employee> getBigSalary() {
         List<Employee> result = new ArrayList<>();
         for (Employee employee : employees) {
-            if (employee.getSalary() > 6000) {
+            if (employee.getSalary() > salaryAmount) {
                 result.add(employee);
             }
         }
@@ -25,12 +27,12 @@ public class Employees {
     public Map<String, List<Employee>> mapPersonToCo() {
         Map<String, List<Employee>> result = new HashMap<>();
         for (Employee employee : employees) {
-            List<Employee> employees = result.get(employee.getCompany());
-            if (employees == null) {
-                employees = new ArrayList<>();
-                result.put(employee.getCompany(), employees);
+            List<Employee> companyEmployees = result.get(employee.getCompany());
+            if (companyEmployees == null) {
+                companyEmployees = new ArrayList<>();
+                result.put(employee.getCompany(), companyEmployees);
             }
-            employees.add(employee);
+            companyEmployees.add(employee);
         }
         return result;
     }
@@ -49,6 +51,17 @@ public class Employees {
             if(employee.getSalary() > biggestSalary.getSalary()){
                 biggestSalary = employee;
                 return biggestSalary.getCompany();
+            }
+        }
+        return null;
+    }
+
+    public String getEmployeeBiggestSalary(){
+        Employee employeeMoreMoney = employees.get(0);
+        for (Employee employee : employees){
+            if(employee.getSalary() > employeeMoreMoney.getSalary()){
+                employeeMoreMoney = employee;
+                return employeeMoreMoney.getName();
             }
         }
         return null;

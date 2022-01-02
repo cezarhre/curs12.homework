@@ -21,16 +21,4 @@ public class Employee extends Person {
         return company;
     }
 
-    public int getAge() {
-        return super.getAge();
-    }
-
-    public String getHairColour() {
-        return super.getHairColour();
-    }
-
-    public String getName() {
-        return super.getName();
-
-    }
 }
