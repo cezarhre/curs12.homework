@@ -16,6 +16,7 @@ public class EmployeesMain {
         System.out.println(employees.mapPersonToCo());
         System.out.println(employees.getSalarySum());
         System.out.println(employees.getCompanyBiggestSalary());
+        System.out.println(employees.getEmployeeBiggestSalary());
 
     }
 }
