@@ -56,11 +56,4 @@ public class PersonList {
         }
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "PersonList{" +
-                "personList=" + personList +
-                '}';
-    }
 }
