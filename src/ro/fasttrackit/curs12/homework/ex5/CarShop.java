@@ -15,9 +15,9 @@ public class CarShop {
     public Map<String, Integer> mapNameNumber() {
         Map<String, Integer> result = new HashMap<>();
         for (Car car : carShop) {
-             Integer count = result.get(car.getName());
-                result.put(car.getName(), count == null ? 1 : count + 1);
-            }
+            Integer count = result.get(car.getName());
+            result.put(car.getName(), count == null ? 1 : count + 1);
+        }
         return result;
     }
 
@@ -30,11 +30,7 @@ public class CarShop {
         return result;
     }
 
-    public Map<CarRange, List<Car>> mapKmCar() {
-        List<CarRange> rangeKm = new ArrayList<>();
-        rangeKm.add(new CarRange(50000, 80000));
-        rangeKm.add(new CarRange(80001, 100000));
-        rangeKm.add(new CarRange(100001, 150000));
+    public Map<CarRange, List<Car>> mapKmCar(List<CarRange> rangeKm) {
         Map<CarRange, List<Car>> range = new HashMap<>();
         for (CarRange range1 : rangeKm) {
             List<Car> carShopList = new ArrayList<>();
@@ -43,16 +39,12 @@ public class CarShop {
                     carShopList.add(car);
                 }
             }
-                range.put(range1, carShopList);
-            }
-            return range;
+            range.put(range1, carShopList);
         }
+        return range;
+    }
 
-    public Map<CarRange, List<Car>> mapPriceCar(){
-        List<CarRange> rangePrice = new ArrayList<>();
-        rangePrice.add(new CarRange(2000, 5000));
-        rangePrice.add(new CarRange(5001, 10000));
-        rangePrice.add(new CarRange(10001, 15000));
+    public Map<CarRange, List<Car>> mapPriceCar(List<CarRange> rangePrice) {
         Map<CarRange, List<Car>> range = new HashMap<>();
         for (CarRange range1 : rangePrice) {
             List<Car> carShopList = new ArrayList<>();
@@ -61,7 +53,7 @@ public class CarShop {
                     carShopList.add(car);
                 }
             }
-            range.put(range1,carShopList);
+            range.put(range1, carShopList);
         }
         return range;
     }

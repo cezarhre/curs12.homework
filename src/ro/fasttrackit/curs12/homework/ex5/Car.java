@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Car {
 
-    private String name;
-    private int age;
-    private int km;
-    private int price;
+    private final String name;
+    private final int age;
+    private final int km;
+    private final int price;
 
     public Car(String name, int age, int km, int price){
         this.name = name;
