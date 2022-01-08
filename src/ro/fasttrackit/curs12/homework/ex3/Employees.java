@@ -6,15 +6,13 @@ public class Employees {
 
     private final List<Employee> employees;
 
-    int salaryAmount = 6000;
-
     public Employees(List<Employee> employees) {
         this.employees = employees == null
                 ? new ArrayList<>()
                 : new ArrayList<>(employees);
     }
 
-    public List<Employee> getBigSalary() {
+    public List<Employee> getBigSalary(int salaryAmount) {
         List<Employee> result = new ArrayList<>();
         for (Employee employee : employees) {
             if (employee.getSalary() > salaryAmount) {

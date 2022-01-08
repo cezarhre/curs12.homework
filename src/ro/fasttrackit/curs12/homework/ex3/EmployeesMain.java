@@ -12,7 +12,7 @@ public class EmployeesMain {
                 new Employee("Alin",45,"blond","LG",6000)
         ));
 
-        System.out.println(employees.getBigSalary());
+        System.out.println(employees.getBigSalary(6000));
         System.out.println(employees.mapPersonToCo());
         System.out.println(employees.getSalarySum());
         System.out.println(employees.getCompanyBiggestSalary());
