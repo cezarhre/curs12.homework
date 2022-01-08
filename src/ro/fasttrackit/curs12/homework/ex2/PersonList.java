@@ -5,7 +5,6 @@ import java.util.*;
 public class PersonList {
 
     private final List<Person> personList;
-    int givenAge = 18;
 
     public PersonList(List<Person> personList){
         this.personList = personList == null
@@ -21,7 +20,7 @@ public class PersonList {
         return result;
     }
 
-    public List<Person> getOlder(){
+    public List<Person> getOlder(int givenAge){
         List<Person> result = new ArrayList<>();
         for(Person person : personList){
             if(person.getAge()>givenAge){
