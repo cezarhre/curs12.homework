@@ -1,21 +1,21 @@
 package ro.fasttrackit.curs12.homework.ex4;
 
-import java.util.EnumMap;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        EnumMap<WeekDays, String> daysSchedule = new EnumMap<>(WeekDays.class) {
-            {
-                put(WeekDays.MONDAY, " Limbi Straine");
-                put(WeekDays.TUESDAY, " Sport in aer liber");
-                put(WeekDays.WEDNESDAY, " Lectura");
-                put(WeekDays.THURSDAY, " Sport in sala");
-                put(WeekDays.FRIDAY, " Activitati caritabile");
-                put(WeekDays.SATURDAY, " Munte");
-                put(WeekDays.SUNDAY, " Inot");
-            }
-        };
+            WeekDaysList weekDaysList = new WeekDaysList(List.of(
+                    new WeekDaysActivities(WeekDays.MONDAY,"Activitati culturale"),
+                    new WeekDaysActivities(WeekDays.TUESDAY,"Sport"),
+                    new WeekDaysActivities(WeekDays.WEDNESDAY,"Iesire cu prietenii"),
+                    new WeekDaysActivities(WeekDays.THURSDAY,"Lectura"),
+                    new WeekDaysActivities(WeekDays.FRIDAY,"Muzica"),
+                    new WeekDaysActivities(WeekDays.SATURDAY,"Munte"),
+                    new WeekDaysActivities(WeekDays.SUNDAY," Activitati cu familia")
+            ));
 
-        System.out.println(daysSchedule);
+        System.out.println(weekDaysList.getWeekDaysActivities(WeekDays.MONDAY));
+        System.out.println(weekDaysList.getWeekDaysActivities(WeekDays.SATURDAY));
+        System.out.println(weekDaysList.getWeekDaysActivities(WeekDays.SUNDAY));
     }
 }
